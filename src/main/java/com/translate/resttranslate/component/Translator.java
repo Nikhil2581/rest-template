@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Locale;
 
+/**
+ *
+ */
 @Component
 public class Translator {
 
@@ -15,11 +18,16 @@ public class Translator {
     @Autowired
     Translator(ResourceBundleMessageSource messageSource) {
         this.messageSource=messageSource;
+        System.out.println(this.messageSource.getBasenameSet());
     }
 
+    /**
+     *
+     * @param msgCode
+     * @return
+     */
     public String toLocale(String msgCode) {
         Locale locale = LocaleContextHolder.getLocale();
         return messageSource.getMessage(msgCode, null, locale);
     }
-
 }

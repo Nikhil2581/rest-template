@@ -15,12 +15,20 @@ public class TranslatorService {
     @Autowired
     Translator transLator;
 
+    /**
+     *
+     * @param msg
+     * @return
+     */
    public OutPutMsg getMessage(InputMsg msg)
     {
+        List<String> listMsg = msg.getMessages();
         OutPutMsg outPutMsg=new OutPutMsg();
-
-        outPutMsg.setName(transLator.toLocale(msg.getName()));
-
+        List<String> outListMsg = new ArrayList<>() ;
+        for(String str : listMsg) {
+            outListMsg.add(transLator.toLocale(str));
+        }
+        outPutMsg.setLocalMessages(outListMsg);
         return outPutMsg;
     }
 

@@ -2,9 +2,9 @@ package com.translate.resttranslate;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class OutPutMsg {
-    private String name;
-    private String summary;
-    private String news;
+    private List<String> localMessages;
 }

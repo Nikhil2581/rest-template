@@ -26,13 +26,22 @@ public class TranslatorController {
 
     }
 
+    /**
+     *
+     * @param texts
+     * @return
+     */
     @PostMapping("/msg")
-    public OutPutMsg convertI18Text(@RequestBody InputMsg msg) {
+    public OutPutMsg convertI18Text(@RequestBody InputMsg texts) {
 
-        return transService.getMessage(msg);
+        return transService.getMessage(texts);
 
     }
 
+    /**
+     *
+     * @return
+     */
     @GetMapping(path = "")
     public ResponseEntity<List<String>> getMenu() {
         final HttpHeaders httpHeaders= new HttpHeaders();
