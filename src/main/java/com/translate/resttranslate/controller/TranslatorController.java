@@ -38,6 +38,6 @@ public class TranslatorController {
         final HttpHeaders httpHeaders= new HttpHeaders();
         httpHeaders.setContentType(MediaType.valueOf("application/json;charset=UTF-8"));
         List<String> msg = (List<String>) transService.getMsg();
-        return new ResponseEntity<>(msg,httpHeaders, HttpStatus.OK);
+   return new ResponseEntity<>(msg,httpHeaders, HttpStatus.OK);
     }
 }
